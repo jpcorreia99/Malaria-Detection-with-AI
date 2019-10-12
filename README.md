@@ -6,8 +6,8 @@ Aplicação de redes neuronais convolucionais à identificação da preseça do 
 
 - **[Redes Neuronais Convolucionais](#redes-neuronais-convolucionais)**
 - **[Dataset Utilizado e pré-processamento](#dataset-utilizado-e-pré-processamento)**
-- **[Arquitetura e algoritmos utilizados](#topologia-utilizada)**
--  **[Resultados obtidos](#resultados-obtidos)**
+- **[Topologia e algoritmos utilizados](#topologia-e-algoritmos-utilizados)**
+- **[Resultados obtidos](#resultados-obtidos)**
 
 ## Redes Neuronais Convolucionais
 
