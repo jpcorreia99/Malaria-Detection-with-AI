@@ -21,6 +21,7 @@ Redes Neuronais convolucionais são uma subclasse de redes Neuronais que obtém 
  -  **Layers de pooling**. Layer que irá reduzir o tamanho da imagem. Um método bastante utilizado é o maxPooling em que entre 2 pixeis se mantém apenas o que contém maior valor. A utulidade desta layers está no facto de que quando reduzimos o tamanho da imagem, podemos focar cada imagem num aspeto distinto da imagem
  
  ![Pooling](readme_images/MaxPool.png)
+ 
 A parte final de uma rede neuronal convolucional é composta por algumas layers densamente ligadas para que a rede aprenda a quais aspetos das imagens deve dar importância.
 
 ## Dataset utilizado e pré-processamento
@@ -45,7 +46,7 @@ Estas imagens processadas foram gravadas no formato .pickle para permitir maior 
 ## Topologia e algoritmos utilizados
 
 A topologia de uma rede neuronal corresponde à arquitetura das suas layers. No caso da nossa rede convolucional, a arquitetura utilizada foi a seguinte :
-      - 4 Layers de convuolução de 32 e 64 filtros intercaladas com layers de pooling2D 
+      - 4 Layers de convuolução de 32 e 64 filtros intercaladas com layers de pooling2D    
       - 2 Layers ligadas densamente, sendo a última destas duas respionsável por indicar se a célula se encontra infetada por malária
 
 A função de ativação das layers foi sempre rectified linear unit(ReLu), à exceção da última, que apresenta uma função sigmoid, utilizada no cálculo de probabilidades.
