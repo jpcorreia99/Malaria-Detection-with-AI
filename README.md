@@ -39,18 +39,19 @@ O dataset encontra-se separado entre células não infetadas e células já para
  
  ![Célula infetada](readme_images/celula_infetada.png)
  
-Este foi posteriormente separado em imagens para treino e para validação e teste da rede neuronal. As imagens foram ainda normalizadas (os valores dos seus píxeis foram reduzidos a intervalos entre 0 e 1) para facilitar o treino da rede.
+Este foi posteriormente separado em imagens para treino, validação e teste da rede neuronal. As imagens foram ainda normalizadas (os valores dos seus píxeis foram reduzidos a intervalos entre 0 e 1) para facilitar o treino da rede.
 
 Estas imagens processadas foram gravadas no formato .pickle para permitir maior facilidade em carregar os dados.
 
 ## Topologia e algoritmos utilizados
 
 A topologia de uma rede neuronal corresponde à arquitetura das suas layers. No caso da nossa rede convolucional, a arquitetura utilizada foi a seguinte :
-      - 4 Layers de convuolução de 32 e 64 filtros intercaladas com layers de pooling2D    
-      - 2 Layers ligadas densamente, sendo a última destas duas respionsável por indicar se a célula se encontra infetada por malária
+
+      - 4 Layers de convolução de 32 e 64 filtros intercaladas com layers de pooling2D    
+      - 2 Layers ligadas densamente, sendo a última destas duas responsável por indicar se a célula se encontra infetada por malária
 
 A função de ativação das layers foi sempre rectified linear unit(ReLu), à exceção da última, que apresenta uma função sigmoid, utilizada no cálculo de probabilidades.
-O algoritmo de otimização foi o adam, algoritmo que de momento apresenta melhores resultados para este tipo de tarefa e a função de loss utilizada foi a binary_crossentropy, devivo a tratar-se de um problema de classificação binária (está ou não está infetada).
+O algoritmo de otimização foi o "Adam", algoritmo que de momento apresenta melhores resultados para este tipo de tarefa. A função de loss utilizada foi a binary_crossentropy, devivo a tratar-se de um problema de classificação binária (está ou não está infetada).
 
 A seguinte imagem representa uma rede neuronal semelhante à utilizada, com a mesma topologia.
 
