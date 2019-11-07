@@ -11,7 +11,7 @@ Aplicação de redes neuronais convolucionais à identificação da preseça do 
 
 ## Redes Neuronais Convolucionais
 
-Redes Neuronais convolucionais são uma subclasse de redes Neuronais que obtém resultados excelentes em problemas que envolvam processamento e identificação de imagens.
+Redes neuronais convolucionais são uma subclasse de redes neuronais que obtém resultados excelentes em problemas que envolvam processamento e identificação de imagens.
  Estes resultados devem-se à utilização de dois tipos de layers específicos:
 
  - **Layers de convolução**.  Layers responsáveis por aplicar filtros à imagem. Estes filtros tentarão salientar aspetos chave da imagem como, por exemplo, traços horizontais/ verticais. Vários layers convolucionais consecutivos conseguirão salientar padrões cada vez mais complexos. No contexto do nosso projeto os filtros irão começar a salientar aspetos da célula que indiquem se ela está infetada.
@@ -27,7 +27,7 @@ A parte final de uma rede neuronal convolucional é composta por algumas layers 
 ## Dataset utilizado e pré-processamento
 
 
-O dataset utilizado encontra-se presente neste repositório, mas foi originalmente criado por cientistas do Lister Hill National Center for Biomedical Communications (LHNCBC). Foi originalmente publicado [aqui](https://lhncbc.nlm.nih.gov/publication/pub9932)
+O dataset utilizado encontra-se presente neste repositório, tanto na forma de imagens como em arrays numpy já serializados com o *pickle*, mas foi originalmente criado por cientistas do Lister Hill National Center for Biomedical Communications (LHNCBC). Originalmente publicado [aqui](https://lhncbc.nlm.nih.gov/publication/pub9932)
 
 O dataset encontra-se separado entre células não infetadas e células já parasitadas. 
   
@@ -41,14 +41,13 @@ O dataset encontra-se separado entre células não infetadas e células já para
  
 Este foi posteriormente separado em imagens para treino, validação e teste da rede neuronal. As imagens foram ainda normalizadas (os valores dos seus píxeis foram reduzidos a intervalos entre 0 e 1) para facilitar o treino da rede.
 
-Estas imagens processadas foram gravadas no formato .pickle para permitir maior facilidade em carregar os dados.
-
 ## Topologia e algoritmos utilizados
 
 A topologia de uma rede neuronal corresponde à arquitetura das suas layers. No caso da nossa rede convolucional, a arquitetura utilizada foi a seguinte :
 
-      - 4 Layers de convolução de 32 e 64 filtros intercaladas com layers de pooling2D    
-      - 2 Layers ligadas densamente, sendo a última destas duas responsável por indicar se a célula se encontra infetada por malária
+- 4 Layers de convolução de 32 e 64 filtros intercaladas com layers de pooling2D    
+
+- 2 Layers ligadas densamente, sendo a última destas duas responsável por indicar se a célula se encontra infetada por malária
 
 A função de ativação das layers foi sempre rectified linear unit(ReLu), à exceção da última, que apresenta uma função sigmoid, utilizada no cálculo de probabilidades.
 O algoritmo de otimização foi o "Adam", algoritmo que de momento apresenta melhores resultados para este tipo de tarefa. A função de loss utilizada foi a binary_crossentropy, devivo a tratar-se de um problema de classificação binária (está ou não está infetada).
